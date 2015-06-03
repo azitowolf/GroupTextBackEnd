@@ -1,0 +1,19 @@
+== README
+
+USER STORIES
+- user needs to be able to see all Ptexts DONE
+- user needs to be able to post Ptext DONE
+- user needs to be able to post Stext DONE
+- user should be able to push votes for stext
+- user should have text auto sent
+- user should be able to log in
+
+Feature list
+- modal login
+- user looks at their posts
+- badges for votes
+
+Fixes
+- hide stexts made dynamically
+- append Ptexts made dynamically
+- refactor HTML creation code

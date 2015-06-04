@@ -1,4 +1,4 @@
-class StextsController < ApplicationController
+class StextsController < OpenReadController
 
  def index
   @ptext = Ptext.find(params[:ptext_id])
@@ -12,7 +12,7 @@ class StextsController < ApplicationController
 
  def create
   @ptext = Ptext.find(params[:ptext_id])
-  @stext = @ptext.stexts.new(stext_params)
+  @stext = @current_user[@ptext].stexts.new(stext_params)
   if @stext.save then
     render json: @stext, status: :created
   else

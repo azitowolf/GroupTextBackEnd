@@ -1,4 +1,4 @@
-class PtextsController < ApplicationController
+class PtextsController < OpenReadController
 
  def index
   render json: Ptext.all
@@ -9,9 +9,9 @@ class PtextsController < ApplicationController
  end
 
  def create
-  @ptext = Ptext.new(ptext_params)
+  @ptext = @current_user.ptexts.new(ptext_params)
   if @ptext.save then
-    render json: @pstext, status: :created
+    render json: @ptext, status: :created
   else
     render json: @ptext.errors
   end

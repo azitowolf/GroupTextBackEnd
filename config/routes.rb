@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   post '/login' => 'auth#login'
   post '/register' => 'auth#register'
 
-  root 'ptexts#index'
   resources :ptexts do
     resources :stexts
   end

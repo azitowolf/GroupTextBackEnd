@@ -12,7 +12,8 @@ class StextsController < OpenReadController
 
  def create
   @ptext = Ptext.find(params[:ptext_id])
-  @stext = @current_user[@ptext].stexts.new(stext_params)
+  @stext = @ptext.stexts.new(stext_params)
+  @stext.user = current_user
   if @stext.save then
     render json: @stext, status: :created
   else
@@ -37,5 +38,17 @@ class StextsController < OpenReadController
 def stext_params
   params.require(:stext).permit(:title, :text, :votes, :ptext_id)
  end
+
+def getVote
+  @ptext = Ptext.find(params[:ptext_id])
+  @stext = @ptext.stexts.find(params[:id])
+  render json: @stext.get_likes.size
+end
+
+def upVote
+  @stext = Stext.find(params[:id])
+  @stext.liked_by current_user
+  render json: @stext.get_likes.size
+end
 
 end

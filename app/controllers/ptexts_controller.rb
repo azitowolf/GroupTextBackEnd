@@ -9,7 +9,7 @@ class PtextsController < OpenReadController
  end
 
  def create
-  @ptext = @current_user.ptexts.new(ptext_params)
+  @ptext = current_user.ptexts.new(ptext_params)
   if @ptext.save then
     render json: @ptext, status: :created
   else
@@ -26,9 +26,11 @@ class PtextsController < OpenReadController
     end
  end
 
- def delete
+ def destroy
   @ptext = Ptext.find(params[:id])
+  render json: @ptext
   @ptext.destroy
+
  end
 
  def ptext_params

@@ -1,4 +1,8 @@
 class StextSerializer < ActiveModel::Serializer
-  attributes :id, :title, :text, :votes
+  attributes :id, :text, :user, :virtual
+
+def virtual
+  object.get_likes.size
+end
 
 end

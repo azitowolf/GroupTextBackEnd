@@ -27,8 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # ADDITIONAL
-# gem 'pry-rails', :group => :development
 
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'twilio-ruby', '~> 4.1.0'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers'
 

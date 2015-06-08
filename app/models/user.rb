@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :ptexts, dependent: :destroy
   has_many :stexts, dependent: :destroy
+  acts_as_voter
 
   has_secure_password
 

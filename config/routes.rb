@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   post '/login' => 'auth#login'
   post '/register' => 'auth#register'
+  post '/sendMsg' => 'twilio#sendMsg'
+
+
+  post '/ptexts/:ptext_id/stexts/:id/vote' => 'stexts#upVote'
+  get '/ptexts/:ptext_id/stexts/:id/votes' => 'stexts#getVote'
 
   resources :ptexts do
     resources :stexts

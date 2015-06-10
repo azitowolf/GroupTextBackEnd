@@ -7,7 +7,7 @@ class TwilioController < OpenReadController
 
   def sendMsg
 
-    send_to = params[:number]
+    send_to = '6172762096'
     text_content = params[:text]
 
 

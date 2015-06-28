@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # ADDITIONAL
 
+gem 'rails_12factor'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'twilio-ruby', '~> 4.1.0'
 gem 'rack-cors', :require => 'rack/cors'

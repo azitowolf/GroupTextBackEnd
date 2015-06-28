@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150628213508) do
   create_table "ptexts", force: :cascade do |t|
     t.text     "history"
     t.text     "text"
+    t.integer  "number"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

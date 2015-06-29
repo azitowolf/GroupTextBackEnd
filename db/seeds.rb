@@ -6,9 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# alex = User.create! name:"Alex", image:"http://www.c4dcafe.com/ipb/uploads/profile/photo-thumb-155544.png", email:"azw@verizon.net", password:"123", password_confirmation:nil
-# max = User.create! name:"Max", image:"http://www.c4dcafe.com/ipb/uploads/profile/photo-thumb-155544.png", email:"mk@verizon.net", password:"123", password_confirmation:nil
-# andrew = User.create! name:"Andrew", image:"http://www.c4dcafe.com/ipb/uploads/profile/photo-thumb-155544.png", email:"ae@verizon.net", password:"123", password_confirmation:nil
+User.destroy_all
+
+alex = User.create! name:"Alex", image:"http://www.c4dcafe.com/ipb/uploads/profile/photo-thumb-155544.png", email:"azw@verizon.net", password:"123", password_confirmation:nil
+max = User.create! name:"Max", image:"http://www.c4dcafe.com/ipb/uploads/profile/photo-thumb-155544.png", email:"mk@verizon.net", password:"123", password_confirmation:nil
+andrew = User.create! name:"Andrew", image:"http://www.c4dcafe.com/ipb/uploads/profile/photo-thumb-155544.png", email:"ae@verizon.net", password:"123", password_confirmation:nil
 
 p1 = alex.ptexts.create! history:"#1: Hi! #2: hey there world!", text:"im moving to kansas", number: 6172
 p2 = max.ptexts.create! history:"#1: I was spending all day coding and napping with my computer #2: I am pissed!", text:"im moving to kansas", number: 6172

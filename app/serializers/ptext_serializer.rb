@@ -1,5 +1,5 @@
 class PtextSerializer < ActiveModel::Serializer
-  attributes :id, :history, :text, :user, :stexts, :allVotes
+  attributes :id, :history, :text, :user
 
   def allVotes
     @total = 0

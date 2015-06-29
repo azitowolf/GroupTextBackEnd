@@ -14,7 +14,6 @@ andrew = User.create! name:"Andrew", image:"http://www.c4dcafe.com/ipb/uploads/p
 
 p1 = alex.ptexts.create! history:"#1: Hi! #2: hey there world!", text:"im moving to kansas", number: 6172
 p2 = max.ptexts.create! history:"#1: I was spending all day coding and napping with my computer #2: I am pissed!", text:"im moving to kansas", number: 6172
-p3 = andrew.ptexts.create! title:'was so drunk last night', history:"lost my card and then went swimming last night", text:"please find my credit card for me"
 
 # s1 = p1.stexts.create! user: alex, text:"Alex Z needs a place to stay, hes clean and well mannered"
 # s2 = p2.stexts.create! user: max, text:"sorry babe, but honestly you just dont look as good in a skirt as this web app looks with a fresh authentication gem"

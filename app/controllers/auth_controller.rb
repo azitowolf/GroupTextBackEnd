@@ -10,10 +10,9 @@ class AuthController < ApplicationController
   end
 
   def register
-    puts login_params
-    if User.create(login_params
-       .merge(password_confirmation: nil)).valid?
-      head :created
+    user = User.new(login_params.merge(password_confirmation: nil))
+    if user.save!
+      render json: user
     else
       head :bad_request
     end

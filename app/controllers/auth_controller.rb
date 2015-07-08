@@ -10,6 +10,7 @@ class AuthController < ApplicationController
   end
 
   def register
+    puts login_params
     if User.create(login_params
        .merge(password_confirmation: nil)).valid?
       head :created
@@ -21,6 +22,6 @@ class AuthController < ApplicationController
   private
 
   def login_params
-    params.require(:credentials).permit(:email, :password)
+    params.require(:credentials).permit(:name, :image, :email, :password)
   end
 end

@@ -34,10 +34,6 @@ gem 'twilio-ruby', '~> 4.1.0'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers'
 
-gem 'paperclip'
-gem 'aws-sdk', '< 2.0'
-gem 'dotenv-rails'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 

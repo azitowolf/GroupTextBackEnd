@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723235821) do
+ActiveRecord::Schema.define(version: 20150628213508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150723235821) do
     t.text     "history"
     t.text     "text"
     t.integer  "number"
+    t.text     "image"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150723235821) do
 
   create_table "stexts", force: :cascade do |t|
     t.text     "text"
+    t.text     "image"
     t.integer  "user_id"
     t.integer  "ptext_id"
     t.datetime "created_at", null: false
@@ -39,17 +41,13 @@ ActiveRecord::Schema.define(version: 20150723235821) do
   add_index "stexts", ["user_id"], name: "index_stexts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                null: false
-    t.string   "image",               null: false
-    t.string   "email",               null: false
-    t.string   "password_digest",     null: false
-    t.string   "token",               null: false
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "name"
+    t.string   "avatar"
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.string   "token",           null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

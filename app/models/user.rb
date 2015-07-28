@@ -17,26 +17,6 @@ class User < ActiveRecord::Base
   alias_method_chain :authenticate, :new_token
 
 
-    # :url => ':https://console.aws.amazon.com/s3/home?region=us-west-2#&bucket=grouptext-photos&prefix=',
-    # :path => "/:class/:attachment/:id_partition/:style/:filename"
-
-
-  has_attached_file :avatar, styles: {
-    thumb: '100x100>',
-    square: '200x200#',
-    medium: '300x300>'
-  },
-  :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['S3_BUCKET_NAME'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
-
-  # Validate the attached image is image/jpg, image/png, etc
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
-
   private
 
   # FIXME: Validate that token doesn't exist? (improbable)

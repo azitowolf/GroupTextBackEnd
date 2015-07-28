@@ -4,7 +4,7 @@ class CreatePtexts < ActiveRecord::Migration
       t.text :history
       t.text :text
       t.integer :number
-      t.text :image
+      t.text :avatar
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

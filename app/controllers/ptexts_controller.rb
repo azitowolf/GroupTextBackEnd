@@ -34,7 +34,7 @@ class PtextsController < OpenReadController
  end
 
  def ptext_params
-  params.require(:ptext).permit(:title, :history, :text, :user_id)
+  params.require(:ptext).permit(:title, :history, :text, :user_id, :avatar)
  end
 
 end

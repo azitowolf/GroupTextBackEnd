@@ -36,7 +36,7 @@ class StextsController < OpenReadController
  end
 
 def stext_params
-  params.require(:stext).permit(:title, :text, :votes, :ptext_id)
+  params.require(:stext).permit(:title, :text, :votes, :ptext_id, :avatar)
  end
 
 def getVote

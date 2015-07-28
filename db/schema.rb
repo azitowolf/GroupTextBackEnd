@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20150628213508) do
     t.text     "history"
     t.text     "text"
     t.integer  "number"
-    t.text     "image"
+    t.text     "avatar"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150628213508) do
 
   create_table "stexts", force: :cascade do |t|
     t.text     "text"
-    t.text     "image"
+    t.text     "avatar"
     t.integer  "user_id"
     t.integer  "ptext_id"
     t.datetime "created_at", null: false

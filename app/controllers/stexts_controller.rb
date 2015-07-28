@@ -30,9 +30,11 @@ class StextsController < OpenReadController
     end
  end
 
- def delete
-  @stext = Stext.find(params[:id])
+ def destroy
+  @ptext = Ptext.find(params[:ptext_id])
+  @stext = @ptext.stexts.find(params[:id])
   @stext.destroy
+  head :no_content
  end
 
 def stext_params

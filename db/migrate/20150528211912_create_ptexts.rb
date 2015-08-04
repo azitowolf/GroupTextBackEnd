@@ -3,7 +3,7 @@ class CreatePtexts < ActiveRecord::Migration
     create_table :ptexts do |t|
       t.text :history
       t.text :text
-      t.integer :number
+      t.text :number
       t.text :avatar
       t.references :user, index: true, foreign_key: true
 

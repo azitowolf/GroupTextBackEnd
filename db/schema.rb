@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150804142427) do
   create_table "ptexts", force: :cascade do |t|
     t.text     "history"
     t.text     "text"
-    t.integer  "number"
+    t.text     "number"
     t.text     "avatar"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150804142427) do
     t.string   "name"
     t.string   "avatar"
     t.string   "email",               null: false
+    t.string   "number"
     t.string   "password_digest",     null: false
     t.string   "token",               null: false
     t.datetime "created_at",          null: false

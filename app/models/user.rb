@@ -16,8 +16,6 @@ class User < ActiveRecord::Base
 
   alias_method_chain :authenticate, :new_token
 
-
-
   has_attached_file :avatar,
   :styles => { :medium => "300x300>", :thumb => "100x100>" },
   :default_url => "/images/:style/missing.png",

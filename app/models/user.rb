@@ -17,6 +17,23 @@ class User < ActiveRecord::Base
   alias_method_chain :authenticate, :new_token
 
 
+
+  has_attached_file :avatar,
+  :styles => { :medium => "300x300>", :thumb => "100x100>" },
+  :default_url => "/images/:style/missing.png",
+  :storage => :s3,
+  :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
+  :s3_host_name => 's3-us-west-2.amazonaws.com',
+  :url => ':s3_domain_url',
+  :path => '/:class/:attachment/:id_partition/:style/:filename'
+
+  def s3_credentials
+    {:bucket => ENV['S3_BUCKET_NAME'], :access_key_id => ENV['AWS_ACCESS_KEY_ID'], :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']}
+  end
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+
   private
 
   # FIXME: Validate that token doesn't exist? (improbable)
